@@ -34,7 +34,7 @@ export default {
     async login(e){
       e.preventDefault();
       if(this.input.email != "" && this.input.password != ""){
-        const response = await fetch("https://tw-front.hectoralvarez.dev/api/auth/login", {
+        const response = await fetch("https://tw-back.hectoralvarez.dev/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export default {
         if(access_token){
           this.$store.commit(`auth/${SET_AUTHENTICATION}`, true);
           this.$store.commit(`auth/${SET_TOKEN}`, access_token);
-          const user = await fetch("https://tw-front.hectoralvarez.dev/api/auth/me", {
+          const user = await fetch("https://tw-back.hectoralvarez.dev/api/auth/me", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
