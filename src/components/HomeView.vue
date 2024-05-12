@@ -111,6 +111,10 @@
             });          
             this.position = await position.json();
           }
+        } else {
+          // If status is != 200
+          // go to logout
+          this.$router.push("/logout");
         }
 
       },
