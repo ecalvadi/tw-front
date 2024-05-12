@@ -2,7 +2,7 @@
 
   <div class="container py-4">
     <header class="pb-3 mb-4 border-bottom">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">TW Front</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
