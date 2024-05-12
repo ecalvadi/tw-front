@@ -1,7 +1,7 @@
 <template>
   <div class="container py-4">
-    <header class="pb-3 mb-4 border-bottom">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <header class="pb-3 mb-4">
+      <nav class="navbar navbar-expand-md fixed-top shadow">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">TW Front</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,17 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
             </ul>
-            <button class="btn btn-primary" type="submit" v-on:click.prevent = "goLogoutPage()">Logout</button>
+
+            <div class="flex-shrink-0 dropdown">
+              <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small shadow" >
+                <li><span class="dropdown-item">{{getUsername()}}</span></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -19,20 +29,22 @@
 
   <!-- MAP -->
   <div class="container m-auto" style="height: 80vh; width: 95vw;">
-    <l-map
-        v-model="zoom"
-        v-model:zoom="zoom"
-        :center="[47.41322, -1.219482]"
-    >
-      <l-tile-layer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      ></l-tile-layer>
-      <l-marker v-model:lat-lng="latlng" draggable @moveend="updatePosition(latlng.lat, latlng.lng)">
-        <l-tooltip>
-          {{getUsername()}}
-        </l-tooltip>
-      </l-marker>
-    </l-map>
+    <div class="card" style="height:100%;">
+      <l-map
+          v-model="zoom"
+          v-model:zoom="zoom"
+          :center="[47.41322, -1.219482]"
+      >
+        <l-tile-layer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        ></l-tile-layer>
+        <l-marker v-model:lat-lng="latlng" draggable @moveend="updatePosition(latlng.lat, latlng.lng)">
+          <l-tooltip>
+            {{getUsername()}}
+          </l-tooltip>
+        </l-marker>
+      </l-map>
+    </div>
   </div>
 </template>
 
@@ -143,3 +155,15 @@
     }
   }
 </script>
+
+<style scoped>
+.dropdown-menu {
+    position: absolute;
+    inset: 0px 0px auto auto;
+    margin: 0px;
+    transform: translate(0px, 34px);
+}
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+</style>
