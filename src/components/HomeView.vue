@@ -28,6 +28,9 @@
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       ></l-tile-layer>
       <l-marker v-model:lat-lng="latlng" draggable @moveend="updatePosition(latlng.lat, latlng.lng)">
+        <l-tooltip>
+          {{getUsername()}}
+        </l-tooltip>
       </l-marker>
     </l-map>
   </div>
@@ -39,6 +42,7 @@
     LMap,
     LTileLayer,
     LMarker,
+    LTooltip,
   } from "@vue-leaflet/vue-leaflet";
   import "leaflet/dist/leaflet.css";
 
@@ -48,6 +52,7 @@
       LMap,
       LTileLayer,
       LMarker,
+      LTooltip,
     },
     data() {
       return {
