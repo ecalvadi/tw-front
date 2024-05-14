@@ -80,7 +80,7 @@ export default {
       }
     },
     checkLogin() {
-      if(this.$store.getters[`auth/${IS_USER_AUTHENTICATED}`]){
+      if(this.$store.getters[`auth/${IS_USER_AUTHENTICATED}`] === 'true'){
         this.$router.push('/home')
       }
     },
