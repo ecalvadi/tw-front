@@ -27,8 +27,15 @@
     </header>
   </div>
 
+
+
   <!-- MAP -->
   <div class="container m-auto" style="height: 80vh; width: 95vw;">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      Mueve el <strong>marcador</strong> para actualizar su ubicación.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    
     <div class="card" style="height:100%;">
       <l-map
           v-model="zoom"
