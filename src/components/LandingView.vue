@@ -11,7 +11,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
             </ul>
-            <button class="btn btn-primary" type="submit" v-on:click.prevent = "goLoginPage()">Login</button>
+            <button class="btn btn-primary" type="submit" v-on:click.prevent = "goLoginPage()">Ingresar</button>
           </div>
         </div>
       </nav>
@@ -33,7 +33,7 @@
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>Actualiza tu posición</h2>
           <p>Accede con tu usuario y actualiza tu posición manualmente desde la plataforma web.</p>
-          <a class="btn btn-outline-light" href="/login">Log in</a>
+          <a class="btn btn-outline-light" href="/login">Ingresar</a>
         </div>
       </div>
       <div class="col-md-6">

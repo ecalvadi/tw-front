@@ -18,7 +18,7 @@
               <ul class="dropdown-menu text-small shadow" >
                 <li><span class="dropdown-item">{{getUsername()}}</span></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+                <li><a class="dropdown-item" href="/logout">Salir</a></li>
               </ul>
             </div>
           </div>
