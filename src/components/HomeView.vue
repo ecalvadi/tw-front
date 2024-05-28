@@ -106,7 +106,7 @@
       async getPosition(){
         const token = this.$store.getters[`auth/${GET_TOKEN}`];
         
-        const response = await fetch("https://tw-back.hectoralvarez.dev/api/positions/byUser", {
+        const response = await fetch("https://tw-back.hectoralvarez.dev/api/positions/by-user", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -116,7 +116,7 @@
 
         if(response.status === 200){
           this.position = await response.json();
-          if(this.position.id){
+          if(this.position){
             this.latlng = [this.position.lat, this.position.lon];
           } else {
             
@@ -147,7 +147,7 @@
         this.position.lon = lon;
 
         await fetch("https://tw-back.hectoralvarez.dev/api/positions/"+this.position.id, {
-          method: "PUT",
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer " + this.$store.getters[`auth/${GET_TOKEN}`],

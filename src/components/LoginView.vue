@@ -46,15 +46,15 @@ export default {
             }
           )
         });
-        const {access_token} = await response.json();
-        if(access_token){
+        const {token} = await response.json();
+        if(token){
           this.$store.commit(`auth/${SET_AUTHENTICATION}`, true);
-          this.$store.commit(`auth/${SET_TOKEN}`, access_token);
-          const user = await fetch("https://tw-back.hectoralvarez.dev/api/auth/me", {
-            method: "POST",
+          this.$store.commit(`auth/${SET_TOKEN}`, token);
+          const user = await fetch("https://tw-back.hectoralvarez.dev/api/user/current", {
+            method: "GET",
             headers: {
               "Content-Type": "application/json",
-              "Authorization": "Bearer " + access_token,
+              "Authorization": "Bearer " + token,
             },
           });
           const {name} = await user.json();
